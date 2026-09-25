@@ -1,9 +1,5 @@
 function GameDetails() {
-    return (
-        <div>
-            game
-        </div>
-    )
+  return <div>game</div>;
 }
 
-export default GameDetails
+export default GameDetails;
