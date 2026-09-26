@@ -70,3 +70,14 @@ p {
   letter-spacing: 0.5px;
   line-height: 1.4;
 }
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+.visible-mobile {
+  @include mobile-up {
+    display: none;
+  }
+}
