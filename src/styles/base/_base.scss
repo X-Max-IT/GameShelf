@@ -1,0 +1,83 @@
+@use "../abstracts" as *;
+* {
+  touch-action: manipulation;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @include fluid-text(18, 16);
+  background-color: var(--bg-body);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.28;
+}
+a,
+button,
+input,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+h4,
+h5 {
+  font-weight: 500;
+}
+
+h1 {
+  @include fluid-text(42, 34);
+}
+h2 {
+  @include fluid-text(36, 30);
+}
+h3 {
+  @include fluid-text(30, 24);
+}
+h4 {
+  @include fluid-text(20, 18);
+}
+h5 {
+  @include fluid-text(18, 16);
+}
+p {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(
+    var(--container-width) + var(--container-padding-x) * 2
+  ); // Отступы бо бокам
+  margin-inline: auto; // По центру
+  padding-inline: var(--container-padding-x); // Внутренние отступы
+}
+
+.section {
+  padding-bottom: var(--section-padding-y-bottom);
+  padding-top: var(--section-padding-y-top);
+}
+
+.caption {
+  text-transform: var(--text-uppercase);
+  color: var(--color-tag);
+  font-size: px-to-rem(14);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+.visible-mobile {
+  @include mobile-up {
+    display: none;
+  }
+}
