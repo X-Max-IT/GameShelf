@@ -1,0 +1,57 @@
+@use "../../../styles/abstracts" as *;
+
+.toggle {
+  @include reset-button;
+  position: relative;
+  background-color: var(--bg-body);
+  width: 70px;
+  height: 34px;
+  border-radius: var(--border-radius-toggle);
+  padding: 5px;
+  overflow: hidden;
+  transition: background-color var(--transition-duration);
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transition: transform var(--transition-duration);
+    opacity: 1;
+    &--sun {
+      left: 8px;
+      transform: translateY(-50%) scale(0);
+      opacity: 0;
+    }
+    &--dark {
+      right: 8px;
+      transform: translateY(-50%) scale(1);
+      opacity: 1;
+    }
+  }
+  &__ellipse {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--bg-components);
+    transition: var(--toggle-transition);
+    z-index: 2;
+  }
+
+  [data-theme="dark"] & {
+    &__ellipse {
+      transform: translateX(36px);
+    }
+    &__icon--sun {
+      transform: translateY(-50%) scale(1);
+      opacity: 1;
+    }
+    &__icon--dark {
+      transform: translateY(-50%) scale(0);
+      opacity: 0;
+    }
+  }
+}

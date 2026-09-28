@@ -1,6 +1,23 @@
 import { getGames } from "../api/fetchGamesData";
 
+const USE_MOCK = true;
 export async function homeLoader() {
+  if (USE_MOCK) {
+    return {
+      popularGames: Array(5).fill({
+        id: 1,
+        name: "Mock Game",
+        background_image: null,
+        rating: 0,
+      }),
+      games_2024: Array(5).fill({
+        id: 2,
+        name: "Mock 2024",
+        background_image: null,
+        rating: 0,
+      }),
+    };
+  }
   try {
     const [popularGames, games_2024] = await Promise.all([
       getGames({ ordering: "-added", page_size: 5 }),

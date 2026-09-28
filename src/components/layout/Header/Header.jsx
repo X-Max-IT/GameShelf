@@ -1,9 +1,12 @@
+import ToggleTheme from "../../ui/ToggleTheme/ToggleTheme";
+
 function Header() {
   return (
-    <div>
+    <header>
       Header
+      <ToggleTheme />
       <hr />
-    </div>
+    </header>
   );
 }
 

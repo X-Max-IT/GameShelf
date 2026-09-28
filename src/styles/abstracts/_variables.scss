@@ -1,5 +1,5 @@
 :root {
-  --bg-body: #f5f9fd;
+  --bg-body: #f2f8ff;
   --bg-components: #ffffff;
   --text-color: #001a34;
   --color-accent: #7a75f8;
@@ -23,10 +23,12 @@
   --border-radius: 10px;
   --border-radius-card: 10px;
   --border-radius-input: 20px;
+  --border-radius-toggle: 15px;
 
   --border: none;
 
   --transition-duration: 0.3s ease;
+  --toggle-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 [data-theme="dark"] {
   --bg-body: #0f172a;
