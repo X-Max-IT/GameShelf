@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { getStorage, setStorage } from "../utils/localStorage";
 
 export function useTheme() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
+    return getStorage("theme") || "light";
   });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    setStorage("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
