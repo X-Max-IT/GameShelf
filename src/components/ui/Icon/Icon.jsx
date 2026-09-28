@@ -8,6 +8,7 @@ import jostik from "../../../assets/icons/joystick.svg?react";
 import library from "../../../assets/icons/library.svg?react";
 import sun from "../../../assets/icons/sun_theme.svg?react";
 import user from "../../../assets/icons/user.svg?react";
+import arrow_profile from "../../../assets/icons/arrow-profile.svg?react";
 
 const icons = {
   search,
@@ -20,6 +21,7 @@ const icons = {
   library,
   sun,
   user,
+  arrow_profile,
 };
 
 export default function Icon({ name, className = "" }) {
