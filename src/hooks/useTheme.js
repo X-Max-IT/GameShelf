@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function useTheme() {
+export function useTheme() {
   const [theme, setTheme] = useState(() => {
-    localStorage.getItem("theme") || "light";
+    return localStorage.getItem("theme") || "light";
   });
 
   useEffect(() => {
