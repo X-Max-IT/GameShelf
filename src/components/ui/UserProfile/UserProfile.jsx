@@ -28,7 +28,10 @@ function UserProfile() {
       >
         <Icon name="user" className="user-profile__icon" />
         <p className="user-profile__name">{userName}</p>
-        <Icon name="arrow_profile" className="user-profile__arrow" />
+        <Icon
+          name="arrow_profile"
+          className={`user-profile__arrow ${isOpen && "user-profile__arrow--rotate"}`}
+        />
       </button>
 
       {isOpen && (

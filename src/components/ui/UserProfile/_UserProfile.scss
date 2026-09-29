@@ -1,0 +1,31 @@
+@use "../../../styles/abstracts" as *;
+
+.user-profile {
+  position: relative;
+  &__trigger {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: px-to-rem(10);
+  }
+  &__name {
+    color: var(--color-passive);
+  }
+  &__arrow {
+    transition: transform var(--transition-duration);
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+  /*-------------------------------------------------*/
+  &__menu {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    background-color: var(--bg-components);
+  }
+}
