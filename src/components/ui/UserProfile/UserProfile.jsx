@@ -60,8 +60,7 @@ function UserProfile() {
                 Моя библиотека
               </Link>
             </li>
-            <hr />
-            <li className="user-profile__item">
+            <li className="user-profile__item user-profile__item--separator">
               <button
                 className="user-profile__link user-profile__action"
                 onClick={() => {

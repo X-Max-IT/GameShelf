@@ -10,7 +10,8 @@
     gap: px-to-rem(10);
   }
   &__name {
-    color: var(--color-passive);
+    color: var(--color-accent);
+    font-size: px-to-rem(16);
   }
   &__arrow {
     transition: transform var(--transition-duration);
@@ -22,10 +23,45 @@
   /*-------------------------------------------------*/
   &__menu {
     position: absolute;
+    right: 0;
+    top: 50px;
+    min-width: 200px;
+    background-color: var(--bg-components);
+    border-radius: var(--border-radius);
+    padding: px-to-rem(12);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 100;
+  }
+  &__list {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    background-color: var(--bg-components);
+    gap: px-to-rem(10);
+  }
+  &__link {
+    font-size: px-to-rem(16);
+    color: var(--text-color);
+    font-weight: 400;
+    &--disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+  &__item {
+    &--separator {
+      border-top: 0.5px solid var(--color-passive);
+      padding-top: px-to-rem(12);
+      margin-top: px-to-rem(12);
+    }
+  }
+  &__action {
+    @include reset-button;
+    color: var(--color-red-passive);
+    transition: color var(--transition-duration);
+
+    @include hover {
+      color: var(--color-red-active);
+    }
   }
 }
