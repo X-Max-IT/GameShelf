@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-between;
     gap: px-to-rem(10);
+    &:focus {
+      outline: none;
+    }
   }
   &__name {
     color: var(--color-accent);

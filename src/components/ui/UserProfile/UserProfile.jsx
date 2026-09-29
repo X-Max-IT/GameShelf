@@ -16,15 +16,25 @@ function UserProfile() {
         setIsOpen(false);
       }
     }
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
     document.addEventListener("mousedown", handleOutside);
-    return () => document.removeEventListener("mousedown", handleOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
     <div className="user-profile">
       <button
         className="user-profile__trigger"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen((prev) => !prev)}
+        type="button"
       >
         <Icon name="user" className="user-profile__icon" />
         <p className="user-profile__name">{userName}</p>
@@ -35,7 +45,7 @@ function UserProfile() {
       </button>
 
       {isOpen && (
-        <div className="user-profile__menu" ref={menuRef}>
+        <div className="user-profile__menu" ref={menuRef} role="menu">
           <ul className="user-profile__list">
             <li className="user-profile__item">
               <Link
