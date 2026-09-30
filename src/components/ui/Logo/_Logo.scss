@@ -1,0 +1,15 @@
+@use "../../../styles/abstracts" as *;
+
+.logo {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: fluid(px-to-rem(10), px-to-rem(15));
+  }
+
+  &__name {
+    font-size: fluid(px-to-rem(20), px-to-rem(30));
+    font-weight: 700;
+  }
+}

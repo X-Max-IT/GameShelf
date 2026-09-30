@@ -4,3 +4,9 @@
 @use "./styles/abstracts/" as *;
 
 @use "./styles/base/base";
+
+@use "./components/ui/ToggleTheme/Toggle";
+@use "./components/ui/UserProfile/UserProfile";
+@use "./components/ui/Logo/Logo";
+
+@use "./components/layout/Header/header.scss";

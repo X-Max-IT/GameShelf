@@ -1,0 +1,71 @@
+@use "../../../styles/abstracts" as *;
+
+.header {
+  width: 100%;
+  background: var(--bg-components);
+  box-shadow: 0px 0px 4px 0px var(--color-passive);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: fluid(px-to-rem(30), px-to-rem(50));
+    padding: 12px;
+  }
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: fluid(px-to-rem(30), px-to-rem(40));
+    }
+    &-link {
+      position: relative;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: px-to-rem(5);
+      color: var(--color-passive);
+      transition:
+        transform var(--transition-duration),
+        color var(--transition-duration);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background-color: var(--color-accent);
+        transition:
+          width var(--transition-duration),
+          left var(--transition-duration);
+      }
+
+      @include hover {
+        transform: scale(1.1);
+        color: var(--color-accent);
+
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+    &-link.active {
+      transform: scale(1.1);
+      color: var(--color-accent);
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+  &__profile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: fluid(px-to-rem(10), px-to-rem(25));
+  }
+}

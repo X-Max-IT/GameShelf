@@ -1,11 +1,17 @@
-$tablet: 1024px;
-$mobile: 767px;
-$mobile-above: 768px;
+$tablet: 900px;
+$tablet-above: 901px;
+$mobile: 560px;
 $mobile-s: 480px;
+$mobile-s-above: 481px;
 $mobile-xs: 360px;
 
 @mixin tablet-down {
   @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin tablet-up {
+  @media (min-width: $tablet-above) {
     @content;
   }
 }
@@ -21,6 +27,11 @@ $mobile-xs: 360px;
 }
 @mixin mobile-s {
   @media (max-width: $mobile-s) {
+    @content;
+  }
+}
+@mixin mobile-s-above {
+  @media (min-width: $mobile-s-above) {
     @content;
   }
 }
