@@ -12,3 +12,5 @@ export async function getGames(filters = {}) {
 
   return data.results;
 }
+
+//Получить игру: api.rawg.io/api/games/3328?key=c8d790eb02694c2498f98cf29f492921
