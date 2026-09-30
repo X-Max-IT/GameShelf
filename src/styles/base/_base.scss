@@ -72,13 +72,24 @@ p {
   line-height: 1.4;
 }
 
-.hidden-mobile {
+.hidden-tablet {
   @include tablet-down {
     display: none !important;
   }
 }
-.visible-mobile {
+.visible-tablet {
   @include tablet-up {
+    display: none;
+  }
+}
+
+.hidden-mobile-s {
+  @include mobile-s {
+    display: none !important;
+  }
+}
+.visible-mobile-s {
+  @include mobile-s-above {
     display: none;
   }
 }

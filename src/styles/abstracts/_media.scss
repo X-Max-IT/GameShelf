@@ -1,8 +1,8 @@
 $tablet: 900px;
 $tablet-above: 901px;
 $mobile: 560px;
-$mobile-above: 561px;
 $mobile-s: 480px;
+$mobile-s-above: 481px;
 $mobile-xs: 360px;
 
 @mixin tablet-down {
@@ -27,6 +27,11 @@ $mobile-xs: 360px;
 }
 @mixin mobile-s {
   @media (max-width: $mobile-s) {
+    @content;
+  }
+}
+@mixin mobile-s-above {
+  @media (min-width: $mobile-s-above) {
     @content;
   }
 }

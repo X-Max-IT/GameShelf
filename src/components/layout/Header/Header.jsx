@@ -9,7 +9,7 @@ function Header() {
     <header className="header">
       <div className="container header__container">
         <Logo />
-        <nav className="header__menu hidden-mobile">
+        <nav className="header__menu hidden-tablet">
           <ul className="header__menu-list">
             <li className="header__menu-item">
               <NavLink to={"/"} className="header__menu-link">
@@ -32,7 +32,9 @@ function Header() {
           </ul>
         </nav>
         <div className="header__profile-toggle">
-          <ToggleTheme />
+          <div className="hidden-mobile-s">
+            <ToggleTheme className="hidden-mobile-s" />
+          </div>
           <UserProfile />
         </div>
       </div>

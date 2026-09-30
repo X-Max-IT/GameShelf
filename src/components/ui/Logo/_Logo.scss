@@ -5,11 +5,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: px-to-rem(15);
+    gap: fluid(px-to-rem(10), px-to-rem(15));
   }
 
   &__name {
-    font-size: px-to-rem(30);
+    font-size: fluid(px-to-rem(20), px-to-rem(30));
     font-weight: 700;
   }
 }

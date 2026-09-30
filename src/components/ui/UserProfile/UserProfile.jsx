@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import useUserName from "../../../hooks/useUserName";
 import Icon from "../Icon/Icon";
 import { Link, useNavigate } from "react-router-dom";
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
 
 function UserProfile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ function UserProfile() {
   }, []);
 
   return (
-    <div className="user-profile">
+    <div className="user-profile" ref={menuRef}>
       <button
         className="user-profile__trigger"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -45,7 +46,7 @@ function UserProfile() {
       </button>
 
       {isOpen && (
-        <div className="user-profile__menu" ref={menuRef} role="menu">
+        <div className="user-profile__menu" role="menu">
           <ul className="user-profile__list">
             <li className="user-profile__item">
               <Link
@@ -55,12 +56,12 @@ function UserProfile() {
                 Сменить имя
               </Link>
             </li>
-            <li className="user-profile__item visible-mobile">
+            <li className="user-profile__item visible-tablet">
               <Link to={"/"} className="user-profile__link">
                 Главная
               </Link>
             </li>
-            <li className="user-profile__item visible-mobile">
+            <li className="user-profile__item visible-tablet">
               <Link to={"/catalog"} className="user-profile__link">
                 Каталог
               </Link>
@@ -69,6 +70,9 @@ function UserProfile() {
               <Link to={"/library"} className="user-profile__link">
                 Моя библиотека
               </Link>
+            </li>
+            <li className="user-profile__item visible-mobile-s">
+              <ToggleTheme />
             </li>
             <li className="user-profile__item user-profile__item--separator">
               <button
