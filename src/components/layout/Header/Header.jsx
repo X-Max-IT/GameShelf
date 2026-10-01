@@ -32,8 +32,8 @@ function Header() {
           </ul>
         </nav>
         <div className="header__profile-toggle">
-          <div className="hidden-mobile-s">
-            <ToggleTheme className="hidden-mobile-s" />
+          <div className="hidden-mobile">
+            <ToggleTheme />
           </div>
           <UserProfile />
         </div>

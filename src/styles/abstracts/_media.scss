@@ -1,6 +1,7 @@
 $tablet: 900px;
 $tablet-above: 901px;
 $mobile: 560px;
+$mobile-above: 561px;
 $mobile-s: 480px;
 $mobile-s-above: 481px;
 $mobile-xs: 360px;
@@ -20,7 +21,7 @@ $mobile-xs: 360px;
     @content;
   }
 }
-@mixin mobile-up {
+@mixin mobile-above {
   @media (min-width: $mobile-above) {
     @content;
   }
