@@ -15,13 +15,19 @@ function Footer() {
         <nav className="footer__menu">
           <ul className="footer__menu-list">
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">Home</NavLink>
+              <NavLink to={"/"} className="footer__menu-link">
+                Home
+              </NavLink>
             </li>
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">Catalog</NavLink>
+              <NavLink to={"/catalog"} className="footer__menu-link">
+                Catalog
+              </NavLink>
             </li>
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">Library</NavLink>
+              <NavLink to={"/library"} className="footer__menu-link">
+                Library
+              </NavLink>
             </li>
           </ul>
         </nav>
