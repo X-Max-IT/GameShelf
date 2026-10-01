@@ -71,7 +71,7 @@ function UserProfile() {
                 Моя библиотека
               </Link>
             </li>
-            <li className="user-profile__item visible-mobile-s">
+            <li className="user-profile__item visible-mobile">
               <ToggleTheme />
             </li>
             <hr className="user-profile__linear" />

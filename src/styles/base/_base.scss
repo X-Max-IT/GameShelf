@@ -83,13 +83,13 @@ p {
   }
 }
 
-.hidden-mobile-s {
-  @include mobile-s {
+.hidden-mobile {
+  @include mobile {
     display: none !important;
   }
 }
-.visible-mobile-s {
-  @include mobile-s-above {
+.visible-mobile {
+  @include mobile-above {
     display: none;
   }
 }
