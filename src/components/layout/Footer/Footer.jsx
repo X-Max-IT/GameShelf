@@ -5,23 +5,29 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__container">
-        <Logo />
+        <div className="footer__logo">
+          <Logo />
+          <span className="footer__logo-text">
+            Your games. Your collection.
+          </span>
+        </div>
+
         <nav className="footer__menu">
           <ul className="footer__menu-list">
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">Главная</NavLink>
+              <NavLink className="footer__menu-link">Home</NavLink>
             </li>
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">Каталог</NavLink>
+              <NavLink className="footer__menu-link">Catalog</NavLink>
             </li>
             <li className="footer__menu-item">
-              <NavLink className="footer__menu-link">О нас</NavLink>
+              <NavLink className="footer__menu-link">Library</NavLink>
             </li>
           </ul>
         </nav>
         <div className="footer__rights">
           <p className="footer__rights-text">© 2026 GameShelf</p>
-          <p className="footer__rights-text">Все права защищены</p>
+          <p className="footer__rights-text">All rights reserved.</p>
         </div>
       </div>
     </footer>
