@@ -12,8 +12,9 @@ function Button({
   const baseClass = "button";
   const sizeClass = size !== "medium" ? `${baseClass}--${size}` : "";
   const disabledClass = disabled ? `${baseClass}--disabled` : "";
+  const iconClass = icon && !children ? `${baseClass}--icon` : "";
 
-  const classes = [baseClass, sizeClass, disabledClass, className]
+  const classes = [baseClass, sizeClass, disabledClass, iconClass, className]
     .filter(Boolean)
     .join(" ");
 
