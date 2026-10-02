@@ -4,7 +4,7 @@ function Button({
   children,
   disabled = false,
   className = "",
-  size = "medium",
+  size = "medium", //* small, medium, large
   icon,
   onClick,
   type = "button",
