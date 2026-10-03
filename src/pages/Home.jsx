@@ -1,10 +1,10 @@
+import HeroBlock from "../components/features/HeroBlock/HeroBlock";
 import SearchGame from "../components/ui/SearchGame/SearchGame";
 
 function Home() {
   return (
     <div>
-      home
-      <SearchGame />
+      <HeroBlock />
     </div>
   );
 }
