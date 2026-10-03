@@ -1,16 +1,18 @@
 import { useState } from "react";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 function SearchGame() {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   function handleSearch(e) {
     e.preventDefault();
     if (!query.trim()) return;
     const params = new URLSearchParams({ search: query });
     const url = `/catalog?${params.toString()}`;
-    console.log(url);
+    navigate(url, { replace: true });
   }
 
   return (
