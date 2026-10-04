@@ -10,11 +10,17 @@
     gap: fluid(px-to-rem(20), px-to-rem(40));
     padding: fluid(px-to-rem(20), px-to-rem(40));
     border-radius: var(--border-radius);
+
+    @include mobile-s {
+      justify-content: center;
+      text-align: center;
+      background-position: left;
+    }
   }
   &__text {
     display: flex;
     flex-direction: column;
-    gap: px-to-rem(15);
+    gap: fluid(px-to-rem(10), px-to-rem(15));
   }
   &__title {
     color: var(--text-color);
