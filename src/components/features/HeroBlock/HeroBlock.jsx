@@ -12,7 +12,8 @@ function HeroBlock() {
           </h1>
           <p className="hero__description">
             Thousands of games, dozens of genres, and incredible
-            <br /> adventures await you at GameShelf
+            <br className="hidden-mobile" />
+            adventures await you at GameShelf
           </p>
         </div>
         <SearchGame />
