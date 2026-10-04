@@ -1,0 +1,36 @@
+@use "../../../styles/abstracts" as *;
+
+.hero {
+  &__container {
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: fluid(px-to-rem(20), px-to-rem(40));
+    padding: fluid(px-to-rem(20), px-to-rem(40));
+    border-radius: var(--border-radius);
+
+    @include mobile-s {
+      justify-content: center;
+      text-align: center;
+      background-position: left;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(px-to-rem(10), px-to-rem(15));
+  }
+  &__title {
+    color: var(--text-color);
+    line-height: 1.1;
+    &-span {
+      color: var(--color-accent);
+    }
+  }
+  &__description {
+    font-size: fluid(px-to-rem(16), px-to-rem(18));
+    font-weight: 500;
+  }
+}

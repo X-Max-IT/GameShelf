@@ -6,3 +6,7 @@
   background-color: transparent;
   padding: 0;
 }
+@mixin fullwidth-button {
+  width: 100%;
+  max-width: 800px;
+}

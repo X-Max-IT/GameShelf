@@ -1,0 +1,37 @@
+@use "../../../styles/abstracts" as *;
+.button {
+  @include reset-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: px-to-rem(10);
+  font-size: px-to-rem(16);
+  padding: var(--button-padding-medium);
+  background-color: var(--color-accent);
+  color: var(--color-text-button);
+  border-radius: var(--border-radius);
+  transition:
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+
+  @include hover {
+    transform: scale(1.05);
+  }
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(1) !important;
+  }
+  &--small {
+    padding: var(--button-padding-small);
+    font-size: px-to-rem(14);
+  }
+  &--large {
+    padding: var(--button-padding-large);
+    font-size: px-to-rem(18);
+  }
+  &--icon {
+    padding: var(--button-padding-icon);
+    border-radius: var(--border-radius-input);
+  }
+}

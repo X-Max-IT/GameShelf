@@ -2,6 +2,7 @@
   --bg-body: #f2f8ff;
   --bg-components: #ffffff;
   --text-color: #001a34;
+  --color-text-button: #fdfdfd;
   --color-accent: #7a75f8;
   --color-passive: #829ed7;
 
@@ -10,6 +11,8 @@
 
   --color-tag: #829ed7;
   --color-bg-tag: rgba(122, 117, 248, 0.5);
+
+  --hero-image: url("../../assets/image/hero_light_.webp");
 
   --font-family: "Inter", sans-serif;
   --text-uppercase: uppercase;
@@ -20,7 +23,10 @@
   --section-padding-y-top: 20px;
   --section-padding-y-bottom: 30px;
 
-  --button-padding: 15px 20px;
+  --button-padding-small: 10px 15px;
+  --button-padding-medium: 15px 20px;
+  --button-padding-large: 15px 25px;
+  --button-padding-icon: 15px 20px;
   //TODO: добавить падинги кнопки для мобилок
 
   --border-radius: 10px;
@@ -37,4 +43,5 @@
   --bg-body: #0f172a;
   --bg-components: #1e293b;
   --text-color: #f8fafc;
+  --hero-image: url("../../assets/image/hero_dark_.webp");
 }
