@@ -11,8 +11,8 @@ function HeroBlock() {
             <span className="hero__title-span">New worlds</span>
           </h1>
           <p className="hero__description">
-            Thousands of games, dozens of genres, and incredible adventures
-            await you at GameShelf
+            Thousands of games, dozens of genres, and incredible
+            <br /> adventures await you at GameShelf
           </p>
         </div>
         <SearchGame />
