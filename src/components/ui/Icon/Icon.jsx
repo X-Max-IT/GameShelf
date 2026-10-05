@@ -10,6 +10,7 @@ import sun from "../../../assets/icons/sun_theme.svg?react";
 import user from "../../../assets/icons/user.svg?react";
 import arrow_profile from "../../../assets/icons/arrow-profile.svg?react";
 import arrow from "../../../assets/icons/arrow.svg?react";
+import star from "../../../assets/icons/star.svg?react";
 
 const icons = {
   search,
@@ -24,6 +25,7 @@ const icons = {
   user,
   arrow_profile,
   arrow,
+  star,
 };
 
 export default function Icon({ name, className = "" }) {
