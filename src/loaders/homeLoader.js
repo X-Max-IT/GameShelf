@@ -9,12 +9,22 @@ export async function homeLoader() {
         name: "Mock Game",
         background_image: null,
         rating: 0,
+        genres: [
+          {
+            name: "RPG",
+          },
+        ],
       }),
       games_2024: Array(5).fill({
         id: 2,
         name: "Mock 2024",
         background_image: null,
         rating: 0,
+        genres: [
+          {
+            name: "RPG",
+          },
+        ],
       }),
     };
   }
