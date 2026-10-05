@@ -10,7 +10,9 @@
 @use "./components/ui/Logo/Logo";
 @use "./components/ui/Button/Button";
 @use "./components/ui/SearchGame/SearchGame";
+@use "./components/ui/CardGame/CardGame";
 
 @use "./components/layout/Header/_header.scss";
 @use "./components/layout/Footer/_footer.scss";
 @use "./components/features/HeroBlock/Hero";
+@use "./components/features/GamesSection/GamesSection";
