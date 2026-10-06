@@ -1,1 +1,8 @@
 @use "../../../styles/abstracts" as *;
+
+.games-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: start;
+  gap: px-to-rem(20);
+  display: grid;
+}

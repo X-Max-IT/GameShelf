@@ -17,14 +17,18 @@ function CardGame({ game }) {
           onError={(e) => (e.target.src = placeholderImage)}
         />
         <div className="game-card__content">
-          <h3 className="game-card__title">{name}</h3>
+          <h4 className="game-card__title">{name}</h4>
           <div className="game-card__rating">
             <Icon name="star" />
             <p className="game-card__rating-text">{rating}</p>
           </div>
           <div className="game-card__tags">
             {genres?.slice(0, 3).map((genre) => (
-              <span key={genre.id} className="game-card__tag">
+              <span
+                key={genre.id}
+                className="game-card__tag caption"
+                title={genre.name}
+              >
                 {genre.name}
               </span>
             ))}
