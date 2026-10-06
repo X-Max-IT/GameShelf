@@ -50,19 +50,13 @@
     gap: px-to-rem(8);
   }
   &__tags {
-    width: 100%;
-    margin-top: auto;
+    height: px-to-rem(48);
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
     gap: px-to-rem(5);
-    overflow: hidden;
+    margin-top: auto;
   }
   &__tag {
-    min-width: 0;
-    max-width: 74px;
-    flex-shrink: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
