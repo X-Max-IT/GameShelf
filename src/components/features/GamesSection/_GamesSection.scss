@@ -1,8 +1,34 @@
 @use "../../../styles/abstracts" as *;
 
-.games-grid {
+.cards-grid {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: start;
   gap: px-to-rem(20);
   display: grid;
+}
+.games__container {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(15);
+}
+.games__header {
+  display: flex;
+  align-items: center;
+  gap: px-to-rem(10);
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+  }
+  &-title {
+    color: var(--text-color);
+  }
+  &-caption {
+    color: var(--color-passive);
+  }
 }

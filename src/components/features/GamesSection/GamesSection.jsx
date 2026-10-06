@@ -7,7 +7,7 @@ function GamesSection({ title, caption, icon, games }) {
       <div className="container games__container">
         {title && caption && icon && (
           <div className="games__header">
-            <Icon name={icon} />
+            <Icon name={icon} className="hidden-mobile" />
             <div className="games__header-text">
               <h2 className="games__header-title">{title}</h2>
               <p className="games__header-caption">{caption}</p>
@@ -15,7 +15,7 @@ function GamesSection({ title, caption, icon, games }) {
           </div>
         )}
 
-        <div className="games-grid">
+        <div className="cards-grid">
           {games.map((game) => (
             <CardGame key={game.id} game={game} />
           ))}
