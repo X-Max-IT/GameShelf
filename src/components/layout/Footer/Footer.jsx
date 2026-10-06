@@ -33,7 +33,7 @@ function Footer() {
         </nav>
         <div className="footer__rights">
           <p className="footer__rights-text">© 2026 GameShelf</p>
-          <p className="footer__rights-text">All rights reserved.</p>
+          <p className="footer__rights-text">X-Max-IT</p>
         </div>
       </div>
     </footer>
