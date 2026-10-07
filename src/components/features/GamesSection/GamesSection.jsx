@@ -1,7 +1,7 @@
 import CardGame from "../../ui/CardGame/CardGame";
 import Icon from "../../ui/Icon/Icon";
 
-function GamesSection({ title, caption, icon, games }) {
+function GamesSection({ title, caption, icon, games, horizontal }) {
   return (
     <section className="section">
       <div className="container games__container">
@@ -15,7 +15,9 @@ function GamesSection({ title, caption, icon, games }) {
           </div>
         )}
 
-        <div className="cards-grid">
+        <div
+          className={`cards-grid ${horizontal ? "cards-grid--horizontal" : ""}`}
+        >
           {games.map((game) => (
             <CardGame key={game.id} game={game} />
           ))}

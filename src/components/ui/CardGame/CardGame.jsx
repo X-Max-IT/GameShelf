@@ -7,7 +7,7 @@ function CardGame({ game }) {
   const { id, name, background_image, rating, genres } = game;
 
   return (
-    <Link to={`/game/${id}`}>
+    <Link className="game-card-link" to={`/game/${id}`}>
       <article className="game-card">
         <img
           src={background_image || placeholderImage}

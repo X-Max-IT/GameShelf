@@ -27,6 +27,13 @@ body,
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
+#root {
+  min-width: 0;
+}
+
+main {
+  min-width: 0;
+}
 
 a,
 button,

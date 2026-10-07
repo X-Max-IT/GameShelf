@@ -12,12 +12,14 @@ function Home() {
         icon="fire"
         caption="Выбор сообщества"
         games={popularGames}
+        horizontal
       />
       <GamesSection
         title="Новые игры"
         icon="calendar"
         caption="Свежие релизы"
         games={games_2024}
+        horizontal
       />
     </div>
   );
