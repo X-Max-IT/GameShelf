@@ -13,7 +13,27 @@
     overflow-x: auto;
     min-width: 0;
     max-width: 100%;
-    overflow-y: hidden;
+
+    padding-block: px-to-rem(10);
+    margin-block: px-to-rem(-10);
+
+    padding-inline: px-to-rem(6);
+    margin-inline: px-to-rem(-6);
+
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-scroll);
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-scroll);
+      border-radius: 3px;
+      transition: background-color var(--transition-duration);
+    }
 
     .game-card-link {
       flex: 0 0 auto;
