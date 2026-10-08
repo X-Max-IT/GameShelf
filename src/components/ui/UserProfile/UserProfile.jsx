@@ -46,7 +46,7 @@ function UserProfile() {
       </button>
 
       {isOpen && (
-        <div className="user-profile__menu" role="menu">
+        <div className="user-profile__menu">
           <ul className="user-profile__list">
             <li className="user-profile__item">
               <Link

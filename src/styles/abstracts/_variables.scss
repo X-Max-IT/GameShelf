@@ -9,8 +9,10 @@
   --color-red-passive: #ff5667;
   --color-red-active: #ff1d34;
 
-  --color-tag: #829ed7;
-  --color-bg-tag: rgba(122, 117, 248, 0.5);
+  --color-tag: #7a75f8;
+  --color-bg-tag: rgb(196 194 255 / 50%);
+
+  --color-scroll: rgb(130, 130, 215, 0.3);
 
   --hero-image: url("../../assets/image/hero_light_.webp");
 
@@ -43,5 +45,12 @@
   --bg-body: #0f172a;
   --bg-components: #1e293b;
   --text-color: #f8fafc;
+
   --hero-image: url("../../assets/image/hero_dark_.webp");
+
+  --color-tag: #7a75f8;
+  --color-bg-tag: rgb(89 87 144 / 50%);
+
+  --color-scroll: rgba(0, 0, 0, 0.3);
+  --color-scroll-hover: rgba(0, 0, 0, 0.5);
 }
