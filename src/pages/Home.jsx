@@ -1,26 +1,42 @@
 import { useLoaderData } from "react-router-dom";
+
 import HeroBlock from "../components/features/HeroBlock/HeroBlock";
-import GamesSection from "../components/features/GamesSection/GamesSection";
+import CardsSection from "../components/features/CardsSection/CardsSection";
+import CardGame from "../components/ui/CardGame/CardGame";
+import CardGenre from "../components/ui/CardGenre/CardGenre";
+
+import { HOME_GENRES } from "../data/arrayGenres";
 
 function Home() {
   const { popularGames, games_2024 } = useLoaderData();
   return (
     <div>
       <HeroBlock />
-      <GamesSection
+      <CardsSection
         title="Популярные игры"
         icon="fire"
         caption="Выбор сообщества"
-        games={popularGames}
         horizontal
-      />
-      <GamesSection
-        title="Новые игры"
+      >
+        {popularGames.map((game) => (
+          <CardGame key={game.id} game={game} />
+        ))}
+      </CardsSection>
+      <CardsSection
+        title="Новинки сезона"
         icon="calendar"
         caption="Свежие релизы"
-        games={games_2024}
         horizontal
-      />
+      >
+        {games_2024.map((game) => (
+          <CardGame key={game.id} game={game} />
+        ))}
+      </CardsSection>
+      <CardsSection title="По жанрам" icon="jostik" caption="На любой вкус">
+        {HOME_GENRES.map((genre) => (
+          <CardGenre key={genre.name} genre={genre} />
+        ))}
+      </CardsSection>
     </div>
   );
 }

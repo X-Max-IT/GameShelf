@@ -1,0 +1,32 @@
+@use "../../../styles/abstracts" as *;
+
+.genre-card {
+  padding: px-to-rem(30);
+  border-radius: var(--border-radius-card);
+  color: white;
+  text-align: center;
+  transition: transform var(--transition-duration);
+
+  &--purple {
+    background: linear-gradient(133deg, #7b4791, #cd65f7);
+  }
+  &--red {
+    background: linear-gradient(135deg, #f3331f, #fb7c6f);
+  }
+
+  &--green {
+    background: linear-gradient(135deg, #27ae60, #44ff93);
+  }
+
+  &--violet {
+    background: linear-gradient(135deg, #8e44ad, #d6a4ff);
+  }
+
+  &--orange {
+    background: linear-gradient(135deg, #d35400, #f39c12);
+  }
+
+  @include hover {
+    transform: translateY(-4px);
+  }
+}

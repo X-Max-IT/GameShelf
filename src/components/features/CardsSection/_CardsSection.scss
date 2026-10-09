@@ -51,7 +51,7 @@
 .games__header {
   display: flex;
   align-items: center;
-  gap: px-to-rem(10);
+  gap: px-to-rem(15);
 
   @include mobile {
     flex-direction: column;
