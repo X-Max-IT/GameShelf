@@ -28,7 +28,11 @@ function Button({
   );
 
   if (to) {
-    return <Link className={classes}>{content}</Link>;
+    return (
+      <Link to={to} className={classes}>
+        {content}
+      </Link>
+    );
   }
 
   return (
