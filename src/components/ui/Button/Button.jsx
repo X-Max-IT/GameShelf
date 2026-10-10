@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "../Icon/Icon";
 
 function Button({
@@ -8,6 +9,7 @@ function Button({
   icon,
   onClick,
   type = "button",
+  to,
 }) {
   const baseClass = "button";
   const sizeClass = size !== "medium" ? `${baseClass}--${size}` : "";
@@ -18,6 +20,17 @@ function Button({
     .filter(Boolean)
     .join(" ");
 
+  const content = (
+    <>
+      {children}
+      {icon && <Icon name={icon} className={`${baseClass}__icon`} />}
+    </>
+  );
+
+  if (to) {
+    return <Link className={classes}>{content}</Link>;
+  }
+
   return (
     <button
       className={classes}
@@ -25,8 +38,7 @@ function Button({
       disabled={disabled}
       type={type}
     >
-      {children}
-      {icon && <Icon name={icon} className={`${baseClass}__icon`} />}
+      {content}
     </button>
   );
 }

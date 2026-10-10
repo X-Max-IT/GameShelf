@@ -1,7 +1,7 @@
 @use "../../../styles/abstracts" as *;
 .button {
   @include reset-button;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: px-to-rem(10);
