@@ -6,6 +6,7 @@ import CardGame from "../components/ui/CardGame/CardGame";
 import CardGenre from "../components/ui/CardGenre/CardGenre";
 
 import { HOME_GENRES } from "../data/arrayGenres";
+import Banner from "../components/features/Banner/Banner";
 
 function Home() {
   const { popularGames, games_2024 } = useLoaderData();
@@ -37,6 +38,7 @@ function Home() {
           <CardGenre key={genre.name} genre={genre} />
         ))}
       </CardsSection>
+      <Banner />
     </div>
   );
 }

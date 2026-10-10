@@ -3,13 +3,13 @@
 .cards-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   align-items: start;
-  gap: px-to-rem(20);
+  gap: fluid(px-to-rem(15), px-to-rem(20));
   display: grid;
 
   &--horizontal {
     width: 100%;
     display: flex;
-    gap: px-to-rem(20);
+    gap: fluid(px-to-rem(15), px-to-rem(20));
     overflow-x: auto;
     min-width: 0;
     max-width: 100%;
@@ -38,6 +38,10 @@
     .game-card-link {
       flex: 0 0 auto;
       width: px-to-rem(240);
+
+      @include mobile {
+        width: px-to-rem(180);
+      }
     }
   }
 }
