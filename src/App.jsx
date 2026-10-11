@@ -9,6 +9,7 @@ import Library from "./pages/Library";
 import Registration from "./pages/Registration";
 import NotFound from "./pages/NotFound";
 import { Layout } from "./components/layout/Layout";
+import catalogLoader from "./loaders/catalogLoader";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home />, loader: homeLoader },
-      { path: "catalog", element: <Catalog /> },
+      { path: "catalog", element: <Catalog />, loader: catalogLoader },
       { path: "game/:gameId", element: <GameDetails /> },
       { path: "library", element: <Library /> },
     ],
