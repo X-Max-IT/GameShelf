@@ -50,13 +50,11 @@
     gap: px-to-rem(8);
   }
   &__tags {
-    height: px-to-rem(48);
+    min-height: px-to-rem(48);
     display: flex;
     flex-wrap: wrap;
     align-content: flex-end;
     gap: px-to-rem(5);
     margin-top: auto;
-  }
-  &__tag {
   }
 }
