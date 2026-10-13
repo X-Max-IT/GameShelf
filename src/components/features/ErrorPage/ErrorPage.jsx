@@ -29,7 +29,7 @@ function ErrorPage() {
     return (
       <StateMessage
         title={error.message}
-        message="Не удалось загрузить игры :("
+        message="Не удалось загрузить данные :("
       >
         <Button size="small" onClick={revalidate}>
           Повторить

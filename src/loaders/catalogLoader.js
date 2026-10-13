@@ -26,6 +26,7 @@ async function catalogLoader({ request }) {
   const search = url.searchParams.get("search");
   const genres = url.searchParams.get("genres");
   const metacritic = url.searchParams.get("metacritic");
+  const platforms = url.searchParams.get("platforms");
 
   if (search) {
     filters.search = search;
@@ -33,6 +34,7 @@ async function catalogLoader({ request }) {
   }
   if (genres) filters.genres = genres;
   if (metacritic) filters.metacritic = metacritic;
+  if (platforms) filters.platforms = platforms;
 
   const results = await getGames(filters);
 
