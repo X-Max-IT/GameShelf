@@ -27,5 +27,7 @@
   }
   &__content {
     margin-top: px-to-rem(10);
+    display: flex;
+    gap: px-to-rem(10);
   }
 }
