@@ -16,6 +16,8 @@
 
 @use "./components/layout/Header/_header.scss";
 @use "./components/layout/Footer/_footer.scss";
+
 @use "./components/features/HeroBlock/Hero";
 @use "./components/features/CardsSection/CardsSection";
 @use "./components/features/Banner/Banner";
+@use "./components/features/FilterGames/FilterGames";

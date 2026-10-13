@@ -23,50 +23,64 @@ function FilterGames() {
   };
 
   return (
-    <form key={location.search} onSubmit={hundleSubm} className="filter">
-      <label htmlFor="genres">
-        Жанры
+    <form
+      key={location.search}
+      onSubmit={hundleSubm}
+      className="section filter"
+    >
+      <div className="container filter__container">
         <select
           id="genres"
           name="genres"
           defaultValue={searchParam.get("genres") || undefined}
+          className="filter__select"
         >
-          <option value="">Все жанры</option>
+          <option value="" className="filter__option">
+            Все жанры
+          </option>
           {CATALOG_GENRES.map((genre) => (
-            <option key={genre.id} value={genre.id}>
+            <option key={genre.id} value={genre.id} className="filter__option">
               {genre.name}
             </option>
           ))}
         </select>
-      </label>
-      <label htmlFor="rating">
-        Рейтинг
         <select
           id="rating"
           name="metacritic"
           defaultValue={searchParam.get("metacritic") || undefined}
+          className="filter__select"
         >
-          <option value="">Любой рейтинг</option>
-          <option value="80,100">3.0+</option>
-          <option value="90,100">4.0+</option>
+          <option value="" className="filter__option">
+            Любой рейтинг
+          </option>
+          <option value="80,100" className="filter__option">
+            3.0+
+          </option>
+          <option value="90,100" className="filter__option">
+            4.0+
+          </option>
         </select>
-      </label>
-      <label htmlFor="platforms">
-        Платформа
         <select
           id="platforms"
           name="platforms"
           defaultValue={searchParam.get("platforms") || undefined}
+          className="filter__select"
         >
-          <option value="">Любая</option>
+          <option value="" className="filter__option">
+            Все платформы
+          </option>
           {PLATFORMS.map((platform) => (
-            <option key={platform.id} value={platform.id}>
+            <option
+              key={platform.id}
+              value={platform.id}
+              className="filter__option"
+            >
               {platform.name}
             </option>
           ))}
         </select>
-      </label>
-      <Button type="submit">Применить</Button>
+        <Button type="submit">Применить</Button>
+      </div>
     </form>
   );
 }
