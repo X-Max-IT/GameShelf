@@ -40,6 +40,6 @@ export async function homeLoader() {
     return { popularGames, games_2024 };
   } catch (error) {
     console.error(`Ошибка в home loader: ${error.message}`);
-    return { popularGames: [], games_2024: [] };
+    return { popularGames: [], games_2024: [], error: error.message };
   }
 }
