@@ -10,11 +10,13 @@ import Registration from "./pages/Registration";
 import NotFound from "./pages/NotFound";
 import { Layout } from "./components/layout/Layout";
 import catalogLoader from "./loaders/catalogLoader";
+import ErrorPage from "./components/features/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home />, loader: homeLoader },
       { path: "catalog", element: <Catalog />, loader: catalogLoader },
@@ -24,7 +26,6 @@ const router = createBrowserRouter([
   },
 
   { path: "registration", element: <Registration /> },
-  { path: "*", element: <NotFound /> },
 ]);
 
 function App() {
