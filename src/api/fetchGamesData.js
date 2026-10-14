@@ -6,6 +6,7 @@ export async function getGames(filters = {}) {
     key: API_KEY,
     page_size: 20,
     exclude_additions: true,
+    page: 1,
     ...filters,
   };
   const queryString = new URLSearchParams(params).toString();
@@ -15,7 +16,7 @@ export async function getGames(filters = {}) {
 
   const data = await res.json();
 
-  return data.results;
+  return { results: data.results, next: data.next };
 }
 
 //Получить игру: api.rawg.io/api/games/3328?key=c8d790eb02694c2498f98cf29f492921

@@ -36,13 +36,13 @@ async function catalogLoader({ request }) {
   if (metacritic) filters.metacritic = metacritic;
   if (platforms) filters.platforms = platforms;
 
-  const results = await getGames(filters);
+  const data = await getGames(filters);
 
-  const games = results.filter(
+  const games = data.results.filter(
     (game) => game.playtime > 1 && game.ratings_count > 0,
   );
 
-  return { games };
+  return { games, hasMore: Boolean(data.next) };
 }
 
 export default catalogLoader;
