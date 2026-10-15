@@ -5,17 +5,55 @@ import CardGame from "../components/ui/CardGame/CardGame";
 import FilterGames from "../components/features/FilterGames/FilterGames";
 import StateMessage from "../components/ui/StateMessage/StateMessage";
 import Button from "../components/ui/Button/Button";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { getGames } from "../api/fetchGamesData";
 
 function Catalog() {
-  const { games } = useLoaderData();
+  const { games: initialGames, hasMore: initialHasMore } = useLoaderData();
   const [searchParam, setSearchParam] = useSearchParams();
+
+  const [games, setGames] = useState(initialGames);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(initialHasMore);
+  const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef(null);
+
+  const searchParamsString = searchParam.toString();
+
+  useEffect(() => {
+    setGames(initialGames);
+    setPage(1);
+    setHasMore(initialHasMore);
+  }, [searchParamsString, initialGames, initialHasMore]);
+
+  const loadNextPage = useCallback(async () => {
+    if (isLoading || !hasMore) return;
+    setIsLoading(true);
+    try {
+      const params = Object.fromEntries(searchParam.entries());
+      const nextPage = page + 1;
+      console.log("Параметры запроса:", {
+        ...params,
+        page: nextPage,
+      });
+      const data = await getGames({ ...params, page: nextPage });
+      const newGames = data.results.filter(
+        (game) => game.playtime > 1 && game.ratings_count > 0,
+      );
+      setGames((prev) => [...prev, ...newGames]);
+      setPage(nextPage);
+      setHasMore(Boolean(data.next));
+    } catch (error) {
+      console.error("Не удалось загрузить игры:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [isLoading, hasMore, searchParam, page]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        console.log("Пора зрагрузить страничку!");
+        loadNextPage();
       }
     });
     const sentiref = sentinelRef.current;
@@ -25,7 +63,7 @@ function Catalog() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [loadNextPage]);
 
   return (
     <>
@@ -46,7 +84,9 @@ function Catalog() {
           ))}
         </CardsSection>
       )}
-      <div ref={sentinelRef}>Маячок</div>
+      <div ref={sentinelRef}>
+        {isLoading ? "Загружаем игры..." : hasMore ? "" : "Больше игр нет"}
+      </div>
     </>
   );
 }
