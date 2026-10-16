@@ -28,18 +28,24 @@ function Catalog() {
 
   const loadNextPage = useCallback(async () => {
     if (isLoading || !hasMore) return;
+
     setIsLoading(true);
+
     try {
-      const params = Object.fromEntries(searchParam.entries());
+      const params = Object.fromEntries(
+        [...searchParam.entries()].filter(([, value]) => value !== ""),
+      );
       const nextPage = page + 1;
       console.log("Параметры запроса:", {
         ...params,
         page: nextPage,
       });
+
       const data = await getGames({ ...params, page: nextPage });
       const newGames = data.results.filter(
         (game) => game.playtime > 1 && game.ratings_count > 0,
       );
+
       setGames((prev) => [...prev, ...newGames]);
       setPage(nextPage);
       setHasMore(Boolean(data.next));
@@ -56,10 +62,13 @@ function Catalog() {
         loadNextPage();
       }
     });
+
     const sentiref = sentinelRef.current;
+
     if (sentiref) {
       observer.observe(sentiref);
     }
+
     return () => {
       observer.disconnect();
     };
