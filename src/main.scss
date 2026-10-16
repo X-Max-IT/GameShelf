@@ -12,9 +12,12 @@
 @use "./components/ui/SearchGame/SearchGame";
 @use "./components/ui/CardGame/CardGame";
 @use "./components/ui/CardGenre/CardGenre";
+@use "./components/ui/StateMessage/StateMessage";
 
 @use "./components/layout/Header/_header.scss";
 @use "./components/layout/Footer/_footer.scss";
+
 @use "./components/features/HeroBlock/Hero";
 @use "./components/features/CardsSection/CardsSection";
 @use "./components/features/Banner/Banner";
+@use "./components/features/FilterGames/FilterGames";

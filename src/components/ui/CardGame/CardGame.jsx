@@ -5,6 +5,9 @@ import placeholderImage from "../../../assets/image/null-image.webp";
 
 function CardGame({ game }) {
   const { id, name, background_image, rating, genres } = game;
+  const visible_genres = genres
+    ?.filter((genre) => genre.name.length <= 14)
+    .slice(0, 3);
 
   return (
     <Link className="game-card-link" to={`/game/${id}`}>
@@ -23,7 +26,7 @@ function CardGame({ game }) {
             <p className="game-card__rating-text">{rating}</p>
           </div>
           <div className="game-card__tags">
-            {genres?.slice(0, 3).map((genre) => (
+            {visible_genres.map((genre) => (
               <span
                 key={genre.id}
                 className="game-card__tag caption"

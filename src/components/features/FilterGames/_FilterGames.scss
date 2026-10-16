@@ -1,0 +1,43 @@
+@use "../../../styles/abstracts" as *;
+
+.filter {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: fluid(px-to-rem(10), px-to-rem(20));
+
+    @include tablet-down {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include mobile-xs {
+      align-items: stretch;
+    }
+  }
+  &__select {
+    width: 100%;
+    padding: px-to-rem(12) px-to-rem(40) px-to-rem(12) px-to-rem(16);
+    font-size: fluid(px-to-rem(16), px-to-rem(18));
+    background-color: var(--bg-components);
+    background-image: url("../../../assets/icons/arrow-profile.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    color: var(--text-color);
+    appearance: none;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: box-shadow var(--transition-duration);
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    @include hover {
+      box-shadow: var(--box-shadow-accent);
+    }
+  }
+}

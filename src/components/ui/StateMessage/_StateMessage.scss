@@ -1,0 +1,33 @@
+@use "../../../styles/abstracts" as *;
+
+.state-message {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(5);
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+
+  &__emoji {
+    font-size: px-to-rem(46);
+    line-height: 1.2;
+  }
+  &__status {
+    color: var(--color-accent);
+    font-size: px-to-rem(52);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  &__title {
+    color: var(--color-accent);
+    font-size: px-to-rem(32);
+  }
+  &__description {
+    color: var(--color-passive);
+  }
+  &__content {
+    margin-top: px-to-rem(10);
+    display: flex;
+    gap: px-to-rem(10);
+  }
+}
